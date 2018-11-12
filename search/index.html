@@ -130,7 +130,7 @@
         <!-- {% include breadcrumbs.html %} -->
         <div class="page-section">
           <div class="container">
-             <form class="big-form big-form--short js-multipurpose-search" action="https://sye-pu-lookup-frontend.herokuapp.com/lookup" method="post">
+             <form class="big-form js-multipurpose-search" action="https://sye-pu-lookup-frontend.herokuapp.com/lookup" method="post">
     <h1>Find your representative</h1>
     <label for="search-input" class="js-multipurpose-search-label">Enter your Polling Unit (PU) number</label>
     <p class="input-group">
@@ -141,7 +141,7 @@
     </p>
 </form>
 
-<div class="row">
+<div class="row search-results">
     <div class="col-md-10 col-md-push-1">
         <gcse:searchresults-only></gcse:searchresults-only>
     </div>
@@ -159,9 +159,13 @@
     <div class="site-footer__primary">
       <h3>Shine Your Eye</h3>
       <p>Shine your Eye is an initiative of <a href="http://eie.ng" target="_blank" title="EiE Nigeria">Enough is Enough Nigeria (EiENigeria)</a>  with support from <a href="http://www.placng.org/" target="_blank" title="PLAC NG">Policy and Legal Advocacy Center</a>. <a href="/info/about">Read more.</a></p>
+      <ul class="list-inline">
+        <li><a href="mailto:syeinfo@eienigeria.org">syeinfo@eienigeria.org</a></li>
+        <li><a href="https://twitter.com/NGShineYourEye">@NGShineYourEye</a></li>
+      </ul>
     </div>
     <div class="site-footer__secondary">
-      <ul class="list-unstyled">
+      <ul class="list-inline">
         <li><a class="btn btn-primary" href="/search/">Find your Representative</a></li>
         <li><a class="btn btn-default" href="/blog/">Latest News</a></li>
         <li><a class="btn btn-default" href="/info/democracy-resources">Democractic Resources</a></li>
