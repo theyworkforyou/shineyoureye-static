@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>Usman Ibrahim :: Shine your eye</title>
+  <title>Ijumu :: Shine your eye</title>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -129,32 +129,33 @@
           <div class="container">
              <div class="row">
     <div class="col-sm-4 col-md-3">
-      
-        <img class="person__image" src="/images/person-250x250.png" alt="Usman Ibrahim">
-      
-      <div class="panel panel-default">
+        <div class="person__image">
+            <div id="map-canvas"></div>
+        </div>
+
+        <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Usman Ibrahim</h3>
+        <h3 class="panel-title">Ijumu</h3>
     </div>
     <div class="panel-body">
 
         <ul class="social-actions">
             <li>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/person/usman-ibrahim/&amp;t=Usman Ibrahim"
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/place/ijumu/&amp;t=Ijumu"
                   target="_blank"
                   class="btn btn-block btn-facebook">Share on Facebook
                 </a>
             </li>
 
             <li>
-                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Usman Ibrahim&amp;url=http://localhost:9292/person/usman-ibrahim/"
+                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Ijumu&amp;url=http://localhost:9292/place/ijumu/"
                   target="_blank"
                   class="btn btn-block btn-twitter">Share on Twitter
                 </a>
             </li>
 
             <li>
-                <a href="http://localhost:9292/person/usman-ibrahim/#fb-root"
+                <a href="http://localhost:9292/place/ijumu/#fb-root"
                   class="btn btn-block btn-default">Comments <span class="fb-comments-count"></span>
                 </a>
             </li>
@@ -167,57 +168,38 @@
 
     <div class="col-sm-8 col-md-9">
         <header class="person__key-info">
-
-            <h2>State Representative</h2>
-            <h1 class="person__name">Usman Ibrahim</h1>
-
-          
-            <h2>Constituency</h2>
-            <p class="person__constituency">Adavi</p>
-          
-
-                    
-
-          
-            <h2>Local Government Area</h2>
-            <p class="person__area"><a href="/place/adavi/">Adavi</a></p>
-          
-          
-          
-            <h2>Party</h2>
-            <p class="person__party">All Progressives Congress</p>
-                   
-
-          
-
-          
-            <h2>Phone</h2>
-            <p class="person__phone">08038470118</p>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-
+          <h1 class="person__name">Ijumu</h1>
+          <h2>Local Government Area (House of Assembly)</h2>
         </header>
 
         <section class="person__section">
-            <h2>Summary
-                <!-- <a class="person-edit-link" href="http://prose.io/#theyworkforyou/shineyoureye-prose/edit/gh-pages/summaries/0e0ab7e0-3ff3-422b-901a-2ee47f3b040c.md">Edit</a> -->
-            </h2>
-            <div class="person-summary">
-              
-            </div>
+            <h2>People</h2>
+            <ul class="contact-list">
+  
+    <li class="contact-list__item" id="olumo-kilani">
+        <a href="/person/olumo-kilani/">
+          
+            <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Olumo Kilani">
+          
+        </a>
+        <a href="/person/olumo-kilani/">
+            <h3 class="contact-list__item__name">Olumo Kilani</h3>
+        </a>
+        <p>
+          
+            <span class="test-party">All Progressives Congress</span>,
+            <a class="contact-list__item__area test-area" href="/place/ijumu/">Ijumu</a>
+          
+        </p>
+    </li>
+  
+</ul>
+
         </section>
 
         <section class="person__section">
-          <div id="fb-root"></div>
+            <h2>Comments</h2>
+            <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -230,6 +212,7 @@
         </section>
     </div>
 </div>
+
 
           </div>
         </div>
@@ -275,6 +258,9 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="/javascripts/show-map.js"></script>
+    <script>LeafletMap.showMap([7.848778244197774, 5.9561359941511105], { "type": "Polygon", "coordinates": [ [ [ 6.012780000000134, 7.7734200000001 ], [ 6.034233, 7.744946000000141 ], [ 6.043573, 7.737644000000102 ], [ 6.055741, 7.733982 ], [ 6.066524, 7.730344 ], [ 6.076712, 7.71842 ], [ 6.081778, 7.703587 ], [ 6.085828, 7.697297000000105 ], [ 6.0871, 7.690363 ], [ 6.086081, 7.684388000000126 ], [ 6.089122000000145, 7.672816000000124 ], [ 6.098935, 7.666198 ], [ 6.108733, 7.658658 ], [ 6.112957, 7.654542 ], [ 6.105679000000123, 7.655256 ], [ 6.095223, 7.650592 ], [ 6.064796, 7.637745 ], [ 6.039229, 7.625964000000123 ], [ 6.019011, 7.616861 ], [ 6.002318000000115, 7.607332 ], [ 5.99028, 7.618853 ], [ 5.980277, 7.628483 ], [ 5.972968000000151, 7.633453000000144 ], [ 5.95972600000016, 7.642675 ], [ 5.948123, 7.653255 ], [ 5.942284, 7.663504 ], [ 5.931827, 7.673603 ], [ 5.93004500000012, 7.676374 ], [ 5.926421000000119, 7.682001 ], [ 5.915114, 7.696727 ], [ 5.915513, 7.707101 ], [ 5.915916, 7.717936 ], [ 5.919271, 7.725494 ], [ 5.920224, 7.741626 ], [ 5.921972, 7.749901000000136 ], [ 5.92277, 7.756347 ], [ 5.926578, 7.763435000000129 ], [ 5.920404, 7.767232 ], [ 5.909359000000109, 7.769495 ], [ 5.898064, 7.770609 ], [ 5.886055, 7.770354000000111 ], [ 5.876565, 7.768902 ], [ 5.868193, 7.765121 ], [ 5.859407, 7.764349 ], [ 5.850849, 7.763341 ], [ 5.84251, 7.761637 ], [ 5.835547000000133, 7.759449 ], [ 5.826971, 7.757288 ], [ 5.817013, 7.755383 ], [ 5.811425, 7.756146000000114 ], [ 5.801577, 7.757491 ], [ 5.791731, 7.762503 ], [ 5.785361000000137, 7.765905 ], [ 5.800284000000147, 7.771259 ], [ 5.805939000000137, 7.778536 ], [ 5.813394, 7.797305 ], [ 5.81609, 7.807167000000105 ], [ 5.819561000000135, 7.822086000000127 ], [ 5.817303, 7.839405000000112 ], [ 5.815135, 7.847966 ], [ 5.810980000000142, 7.862092 ], [ 5.809255, 7.869494 ], [ 5.808255, 7.873084 ], [ 5.813068, 7.877034 ], [ 5.818688, 7.882239 ], [ 5.822242, 7.887939 ], [ 5.828550000000121, 7.892901 ], [ 5.836046, 7.899916000000132 ], [ 5.848082, 7.916764 ], [ 5.8631, 7.932408 ], [ 5.868911, 7.949362 ], [ 5.88054, 7.96944100000013 ], [ 5.8957, 7.99407 ], [ 5.902907, 8.011690000000101 ], [ 5.905549, 8.018099 ], [ 5.907497, 8.024514 ], [ 5.922106000000156, 8.043392 ], [ 5.946475000000135, 8.066713000000105 ], [ 5.960799000000121, 8.082368 ], [ 5.976266, 8.097317 ], [ 5.994378, 8.104612 ], [ 6.001785, 8.106155 ], [ 6.001676, 8.099418 ], [ 6.006795, 8.08781 ], [ 6.009582, 8.07486 ], [ 6.023890000000108, 8.046738000000119 ], [ 6.03813300000013, 8.028754 ], [ 6.049421000000109, 7.999300000000118 ], [ 6.050540000000126, 7.98292 ], [ 6.051999, 7.958934000000113 ], [ 6.044368, 7.929338 ], [ 6.038896, 7.904775 ], [ 6.030318, 7.873585 ], [ 6.023888000000113, 7.846965 ], [ 6.017848, 7.830015 ], [ 6.008871, 7.817033 ], [ 6.003143000000136, 7.80515 ], [ 6.013219, 7.786315 ], [ 6.012780000000134, 7.7734200000001 ] ] ] });</script>
 
 
   </body>

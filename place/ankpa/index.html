@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>Usman Ibrahim :: Shine your eye</title>
+  <title>Ankpa :: Shine your eye</title>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -129,32 +129,33 @@
           <div class="container">
              <div class="row">
     <div class="col-sm-4 col-md-3">
-      
-        <img class="person__image" src="/images/person-250x250.png" alt="Usman Ibrahim">
-      
-      <div class="panel panel-default">
+        <div class="person__image">
+            <div id="map-canvas"></div>
+        </div>
+
+        <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Usman Ibrahim</h3>
+        <h3 class="panel-title">Ankpa</h3>
     </div>
     <div class="panel-body">
 
         <ul class="social-actions">
             <li>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/person/usman-ibrahim/&amp;t=Usman Ibrahim"
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/place/ankpa/&amp;t=Ankpa"
                   target="_blank"
                   class="btn btn-block btn-facebook">Share on Facebook
                 </a>
             </li>
 
             <li>
-                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Usman Ibrahim&amp;url=http://localhost:9292/person/usman-ibrahim/"
+                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Ankpa&amp;url=http://localhost:9292/place/ankpa/"
                   target="_blank"
                   class="btn btn-block btn-twitter">Share on Twitter
                 </a>
             </li>
 
             <li>
-                <a href="http://localhost:9292/person/usman-ibrahim/#fb-root"
+                <a href="http://localhost:9292/place/ankpa/#fb-root"
                   class="btn btn-block btn-default">Comments <span class="fb-comments-count"></span>
                 </a>
             </li>
@@ -167,57 +168,55 @@
 
     <div class="col-sm-8 col-md-9">
         <header class="person__key-info">
-
-            <h2>State Representative</h2>
-            <h1 class="person__name">Usman Ibrahim</h1>
-
-          
-            <h2>Constituency</h2>
-            <p class="person__constituency">Adavi</p>
-          
-
-                    
-
-          
-            <h2>Local Government Area</h2>
-            <p class="person__area"><a href="/place/adavi/">Adavi</a></p>
-          
-          
-          
-            <h2>Party</h2>
-            <p class="person__party">All Progressives Congress</p>
-                   
-
-          
-
-          
-            <h2>Phone</h2>
-            <p class="person__phone">08038470118</p>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-
+          <h1 class="person__name">Ankpa</h1>
+          <h2>Local Government Area (House of Assembly)</h2>
         </header>
 
         <section class="person__section">
-            <h2>Summary
-                <!-- <a class="person-edit-link" href="http://prose.io/#theyworkforyou/shineyoureye-prose/edit/gh-pages/summaries/0e0ab7e0-3ff3-422b-901a-2ee47f3b040c.md">Edit</a> -->
-            </h2>
-            <div class="person-summary">
-              
-            </div>
+            <h2>People</h2>
+            <ul class="contact-list">
+  
+    <li class="contact-list__item" id="ahmed-mohammed">
+        <a href="/person/ahmed-mohammed/">
+          
+            <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Ahmed Mohammed">
+          
+        </a>
+        <a href="/person/ahmed-mohammed/">
+            <h3 class="contact-list__item__name">Ahmed Mohammed</h3>
+        </a>
+        <p>
+          
+            <span class="test-party">All Progressives Congress</span>,
+            <a class="contact-list__item__area test-area" href="/place/ankpa/">Ankpa</a>
+          
+        </p>
+    </li>
+  
+    <li class="contact-list__item" id="alfa-momoh-rabiu">
+        <a href="/person/alfa-momoh-rabiu/">
+          
+            <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Alfa Momoh Rabiu">
+          
+        </a>
+        <a href="/person/alfa-momoh-rabiu/">
+            <h3 class="contact-list__item__name">Alfa Momoh Rabiu</h3>
+        </a>
+        <p>
+          
+            <span class="test-party">All Progressives Congress</span>,
+            <a class="contact-list__item__area test-area" href="/place/ankpa/">Ankpa</a>
+          
+        </p>
+    </li>
+  
+</ul>
+
         </section>
 
         <section class="person__section">
-          <div id="fb-root"></div>
+            <h2>Comments</h2>
+            <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -230,6 +229,7 @@
         </section>
     </div>
 </div>
+
 
           </div>
         </div>
@@ -275,6 +275,9 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="/javascripts/show-map.js"></script>
+    <script>LeafletMap.showMap([7.433711833514496, 7.65115026178539], { "type": "Polygon", "coordinates": [ [ [ 7.820442, 7.428349 ], [ 7.823375, 7.428194 ], [ 7.857644, 7.4343 ], [ 7.881534000000102, 7.426740000000109 ], [ 7.875752, 7.3975420000001 ], [ 7.855814000000123, 7.37804 ], [ 7.84832, 7.357174 ], [ 7.847509, 7.348236 ], [ 7.844954, 7.320090000000107 ], [ 7.841528, 7.293849000000137 ], [ 7.835500000000137, 7.27534 ], [ 7.814630000000135, 7.287132 ], [ 7.789822, 7.293543 ], [ 7.768603000000155, 7.293901 ], [ 7.75285, 7.289789 ], [ 7.740544, 7.28493 ], [ 7.72436, 7.282669 ], [ 7.707823, 7.287098 ], [ 7.688336000000106, 7.294571 ], [ 7.671514, 7.295777000000156 ], [ 7.656752, 7.295797 ], [ 7.63969, 7.3106 ], [ 7.607001000000139, 7.314842 ], [ 7.587569000000144, 7.311484 ], [ 7.579141, 7.303792 ], [ 7.564636, 7.291364 ], [ 7.550898000000131, 7.283303000000103 ], [ 7.528792, 7.285981 ], [ 7.510808, 7.286517000000117 ], [ 7.496976000000132, 7.286981000000139 ], [ 7.470695, 7.288119 ], [ 7.450844, 7.287303000000122 ], [ 7.429344, 7.28444 ], [ 7.414997, 7.281689000000142 ], [ 7.408363, 7.280304000000115 ], [ 7.404645, 7.283478 ], [ 7.402656, 7.288809 ], [ 7.402056, 7.29458 ], [ 7.403800000000103, 7.302614 ], [ 7.405509000000108, 7.308346 ], [ 7.410170000000107, 7.311263 ], [ 7.418539000000123, 7.31527 ], [ 7.429203000000142, 7.318545000000143 ], [ 7.438456000000144, 7.320232 ], [ 7.446123, 7.323559 ], [ 7.454517, 7.328945 ], [ 7.463655, 7.337777 ], [ 7.464894, 7.343055 ], [ 7.4670440000001, 7.347627000000159 ], [ 7.471342000000106, 7.356541 ], [ 7.472194000000115, 7.366434 ], [ 7.47469, 7.378142 ], [ 7.474180000000103, 7.389442000000144 ], [ 7.4749, 7.39303 ], [ 7.476438, 7.400694000000158 ], [ 7.475629, 7.407621 ], [ 7.477188000000127, 7.418424 ], [ 7.479002, 7.430836000000113 ], [ 7.481038, 7.442553 ], [ 7.481247, 7.455453000000147 ], [ 7.481053, 7.472047 ], [ 7.480456, 7.492104 ], [ 7.481963, 7.493756000000133 ], [ 7.485623, 7.497776 ], [ 7.489593000000127, 7.500933000000146 ], [ 7.496205, 7.510271 ], [ 7.508111, 7.519054 ], [ 7.524904, 7.530291 ], [ 7.540284000000156, 7.539938 ], [ 7.545571000000109, 7.5529820000001 ], [ 7.547096, 7.561713 ], [ 7.555362, 7.573555 ], [ 7.564110000000142, 7.586770000000114 ], [ 7.572796, 7.596071 ], [ 7.582363000000157, 7.602822 ], [ 7.598598000000152, 7.608075 ], [ 7.617378, 7.61398 ], [ 7.631062, 7.618587000000105 ], [ 7.643178, 7.625985 ], [ 7.664722, 7.631612 ], [ 7.685772, 7.635172 ], [ 7.708178000000145, 7.637095 ], [ 7.730587000000127, 7.639021 ], [ 7.754659, 7.641130000000145 ], [ 7.757396000000141, 7.603496 ], [ 7.76216, 7.569503 ], [ 7.763687, 7.535332 ], [ 7.770736, 7.499917 ], [ 7.778335, 7.470026000000132 ], [ 7.783723000000123, 7.44617200000016 ], [ 7.80423, 7.429213000000118 ], [ 7.820442, 7.428349 ] ] ] });</script>
 
 
   </body>

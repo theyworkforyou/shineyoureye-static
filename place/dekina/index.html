@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>Usman Ibrahim :: Shine your eye</title>
+  <title>Dekina :: Shine your eye</title>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -129,32 +129,33 @@
           <div class="container">
              <div class="row">
     <div class="col-sm-4 col-md-3">
-      
-        <img class="person__image" src="/images/person-250x250.png" alt="Usman Ibrahim">
-      
-      <div class="panel panel-default">
+        <div class="person__image">
+            <div id="map-canvas"></div>
+        </div>
+
+        <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Usman Ibrahim</h3>
+        <h3 class="panel-title">Dekina</h3>
     </div>
     <div class="panel-body">
 
         <ul class="social-actions">
             <li>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/person/usman-ibrahim/&amp;t=Usman Ibrahim"
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/place/dekina/&amp;t=Dekina"
                   target="_blank"
                   class="btn btn-block btn-facebook">Share on Facebook
                 </a>
             </li>
 
             <li>
-                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Usman Ibrahim&amp;url=http://localhost:9292/person/usman-ibrahim/"
+                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Dekina&amp;url=http://localhost:9292/place/dekina/"
                   target="_blank"
                   class="btn btn-block btn-twitter">Share on Twitter
                 </a>
             </li>
 
             <li>
-                <a href="http://localhost:9292/person/usman-ibrahim/#fb-root"
+                <a href="http://localhost:9292/place/dekina/#fb-root"
                   class="btn btn-block btn-default">Comments <span class="fb-comments-count"></span>
                 </a>
             </li>
@@ -167,57 +168,55 @@
 
     <div class="col-sm-8 col-md-9">
         <header class="person__key-info">
-
-            <h2>State Representative</h2>
-            <h1 class="person__name">Usman Ibrahim</h1>
-
-          
-            <h2>Constituency</h2>
-            <p class="person__constituency">Adavi</p>
-          
-
-                    
-
-          
-            <h2>Local Government Area</h2>
-            <p class="person__area"><a href="/place/adavi/">Adavi</a></p>
-          
-          
-          
-            <h2>Party</h2>
-            <p class="person__party">All Progressives Congress</p>
-                   
-
-          
-
-          
-            <h2>Phone</h2>
-            <p class="person__phone">08038470118</p>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-
+          <h1 class="person__name">Dekina</h1>
+          <h2>Local Government Area (House of Assembly)</h2>
         </header>
 
         <section class="person__section">
-            <h2>Summary
-                <!-- <a class="person-edit-link" href="http://prose.io/#theyworkforyou/shineyoureye-prose/edit/gh-pages/summaries/0e0ab7e0-3ff3-422b-901a-2ee47f3b040c.md">Edit</a> -->
-            </h2>
-            <div class="person-summary">
-              
-            </div>
+            <h2>People</h2>
+            <ul class="contact-list">
+  
+    <li class="contact-list__item" id="enema-paul">
+        <a href="/person/enema-paul/">
+          
+            <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Enema Paul">
+          
+        </a>
+        <a href="/person/enema-paul/">
+            <h3 class="contact-list__item__name">Enema Paul</h3>
+        </a>
+        <p>
+          
+            <span class="test-party">All Progressives Congress</span>,
+            <a class="contact-list__item__area test-area" href="/place/dekina/">Dekina</a>
+          
+        </p>
+    </li>
+  
+    <li class="contact-list__item" id="ododo-edoko">
+        <a href="/person/ododo-edoko/">
+          
+            <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Ododo Edoko">
+          
+        </a>
+        <a href="/person/ododo-edoko/">
+            <h3 class="contact-list__item__name">Ododo Edoko</h3>
+        </a>
+        <p>
+          
+            <span class="test-party">All Progressives Congress</span>,
+            <a class="contact-list__item__area test-area" href="/place/dekina/">Dekina</a>
+          
+        </p>
+    </li>
+  
+</ul>
+
         </section>
 
         <section class="person__section">
-          <div id="fb-root"></div>
+            <h2>Comments</h2>
+            <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -230,6 +229,7 @@
         </section>
     </div>
 </div>
+
 
           </div>
         </div>
@@ -275,6 +275,9 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="/javascripts/show-map.js"></script>
+    <script>LeafletMap.showMap([7.548162794293063, 7.176570476362154], { "type": "Polygon", "coordinates": [ [ [ 7.43041600000015, 7.678669 ], [ 7.43115, 7.652619 ], [ 7.432681, 7.633239 ], [ 7.437217000000145, 7.599982 ], [ 7.448193, 7.579748 ], [ 7.45543800000013, 7.557045 ], [ 7.464819, 7.537992 ], [ 7.467686000000127, 7.529878 ], [ 7.47054, 7.520844 ], [ 7.472213, 7.510216000000128 ], [ 7.47603, 7.5037 ], [ 7.478473, 7.497897000000136 ], [ 7.480493, 7.494406 ], [ 7.481963, 7.493756000000133 ], [ 7.480456, 7.492104 ], [ 7.481053, 7.472047 ], [ 7.481247, 7.455453000000147 ], [ 7.481038, 7.442553 ], [ 7.479002, 7.430836000000113 ], [ 7.477188000000127, 7.418424 ], [ 7.475629, 7.407621 ], [ 7.476438, 7.400694000000158 ], [ 7.4749, 7.39303 ], [ 7.474241, 7.39313 ], [ 7.473272000000122, 7.390381 ], [ 7.45657100000011, 7.384672 ], [ 7.436262, 7.384093 ], [ 7.411084, 7.381987 ], [ 7.383828, 7.379913 ], [ 7.359658000000138, 7.383088 ], [ 7.338177, 7.381379 ], [ 7.320858, 7.380289 ], [ 7.299406, 7.380421 ], [ 7.285387, 7.383653 ], [ 7.275072000000136, 7.387747 ], [ 7.265892000000122, 7.390668 ], [ 7.257593, 7.391038 ], [ 7.250637, 7.388852000000156 ], [ 7.247788, 7.383831 ], [ 7.242829, 7.376773000000128 ], [ 7.238991000000113, 7.36762 ], [ 7.237685, 7.358195 ], [ 7.233191, 7.351358000000118 ], [ 7.229606, 7.34358600000013 ], [ 7.219115000000102, 7.336851 ], [ 7.206602, 7.333376000000158 ], [ 7.19688200000013, 7.331466 ], [ 7.174699, 7.329077 ], [ 7.157004, 7.333294000000137 ], [ 7.145606, 7.34178100000014 ], [ 7.137004, 7.351834 ], [ 7.127769, 7.365587 ], [ 7.114229, 7.384248 ], [ 7.102582, 7.405877 ], [ 7.097906, 7.416095 ], [ 7.094546, 7.422374 ], [ 7.089117, 7.429145 ], [ 7.088842, 7.44044 ], [ 7.091556, 7.451455000000123 ], [ 7.090116, 7.462311 ], [ 7.084712, 7.4704660000001 ], [ 7.077366000000154, 7.472663 ], [ 7.070889, 7.471621 ], [ 7.059958, 7.466046 ], [ 7.05622, 7.463113000000135 ], [ 7.049219, 7.458163 ], [ 7.043582000000129, 7.452036 ], [ 7.038858, 7.44520400000016 ], [ 7.032036000000119, 7.437026000000117 ], [ 7.028251000000125, 7.431098 ], [ 7.028353, 7.423262000000135 ], [ 7.02733000000012, 7.417059 ], [ 7.025169, 7.411796000000152 ], [ 7.023857, 7.401911 ], [ 7.020069, 7.395983 ], [ 7.01030500000013, 7.391309 ], [ 6.995304, 7.390874 ], [ 6.979869, 7.392287 ], [ 6.96787, 7.39202900000015 ], [ 6.961183, 7.392143000000146 ], [ 6.949406000000123, 7.391421 ], [ 6.937821, 7.388392000000124 ], [ 6.920767, 7.389369000000102 ], [ 6.906440000000145, 7.387769000000104 ], [ 6.887694, 7.384171 ], [ 6.86773600000015, 7.376672 ], [ 6.860196000000144, 7.38118 ], [ 6.85085, 7.38802 ], [ 6.84747, 7.393146 ], [ 6.842497000000151, 7.399452 ], [ 6.835657, 7.404407 ], [ 6.829535, 7.410962 ], [ 6.81973, 7.41804100000013 ], [ 6.814928000000123, 7.420657 ], [ 6.811933000000123, 7.420938 ], [ 6.80779, 7.421469 ], [ 6.8074, 7.425854 ], [ 6.805536, 7.425984 ], [ 6.806037, 7.42726000000016 ], [ 6.806318, 7.430250000000115 ], [ 6.80568600000015, 7.433947000000103 ], [ 6.805839, 7.443392 ], [ 6.807717000000139, 7.459719 ], [ 6.806616, 7.477248 ], [ 6.806151, 7.491313 ], [ 6.80805400000014, 7.509024 ], [ 6.807849, 7.524926 ], [ 6.812182000000121, 7.536143 ], [ 6.818374000000119, 7.54802 ], [ 6.824608, 7.562661 ], [ 6.838173000000154, 7.574182 ], [ 6.846848, 7.582790000000102 ], [ 6.85712, 7.590220000000102 ], [ 6.873349, 7.595246 ], [ 6.886527000000114, 7.597097000000133 ], [ 6.904799, 7.600012000000105 ], [ 6.917296, 7.602564 ], [ 6.931989, 7.612456000000122 ], [ 6.941625000000101, 7.623352 ], [ 6.948023, 7.633843 ], [ 6.95907, 7.646558 ], [ 6.969148, 7.656297 ], [ 6.976435, 7.664698 ], [ 6.989405000000146, 7.667934000000116 ], [ 7.005341000000101, 7.669049 ], [ 7.019159, 7.667661 ], [ 7.028365, 7.666353 ], [ 7.048973000000103, 7.671075000000144 ], [ 7.068653, 7.675579 ], [ 7.089699, 7.678908 ], [ 7.107132, 7.686908 ], [ 7.122299, 7.697711 ], [ 7.133761, 7.707427 ], [ 7.139705000000106, 7.718385 ], [ 7.152806, 7.729685 ], [ 7.167574000000116, 7.744181 ], [ 7.181662, 7.75938 ], [ 7.189810000000135, 7.764082 ], [ 7.210889, 7.769484 ], [ 7.223188, 7.773885 ], [ 7.241254000000139, 7.778418000000102 ], [ 7.254507000000159, 7.784875 ], [ 7.272854000000109, 7.792398 ], [ 7.293016000000137, 7.798048 ], [ 7.311338000000149, 7.80419 ], [ 7.319269, 7.809585000000141 ], [ 7.324908000000107, 7.815942 ], [ 7.332689, 7.826407 ], [ 7.335574000000121, 7.833502 ], [ 7.335825000000114, 7.833493000000147 ], [ 7.338462, 7.826772 ], [ 7.34841200000011, 7.814389 ], [ 7.364291000000151, 7.783477 ], [ 7.370411, 7.776690000000144 ], [ 7.382736, 7.754362000000127 ], [ 7.390399, 7.743171 ], [ 7.397225, 7.737295 ], [ 7.412271, 7.712157 ], [ 7.42421, 7.694211 ], [ 7.43041600000015, 7.678669 ] ] ] });</script>
 
 
   </body>

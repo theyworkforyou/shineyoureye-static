@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>Usman Ibrahim :: Shine your eye</title>
+  <title>Ogori/Magongo :: Shine your eye</title>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -129,32 +129,33 @@
           <div class="container">
              <div class="row">
     <div class="col-sm-4 col-md-3">
-      
-        <img class="person__image" src="/images/person-250x250.png" alt="Usman Ibrahim">
-      
-      <div class="panel panel-default">
+        <div class="person__image">
+            <div id="map-canvas"></div>
+        </div>
+
+        <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Usman Ibrahim</h3>
+        <h3 class="panel-title">Ogori/Magongo</h3>
     </div>
     <div class="panel-body">
 
         <ul class="social-actions">
             <li>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/person/usman-ibrahim/&amp;t=Usman Ibrahim"
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/place/ogorimagongo/&amp;t=Ogori/Magongo"
                   target="_blank"
                   class="btn btn-block btn-facebook">Share on Facebook
                 </a>
             </li>
 
             <li>
-                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Usman Ibrahim&amp;url=http://localhost:9292/person/usman-ibrahim/"
+                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Ogori/Magongo&amp;url=http://localhost:9292/place/ogorimagongo/"
                   target="_blank"
                   class="btn btn-block btn-twitter">Share on Twitter
                 </a>
             </li>
 
             <li>
-                <a href="http://localhost:9292/person/usman-ibrahim/#fb-root"
+                <a href="http://localhost:9292/place/ogorimagongo/#fb-root"
                   class="btn btn-block btn-default">Comments <span class="fb-comments-count"></span>
                 </a>
             </li>
@@ -167,57 +168,38 @@
 
     <div class="col-sm-8 col-md-9">
         <header class="person__key-info">
-
-            <h2>State Representative</h2>
-            <h1 class="person__name">Usman Ibrahim</h1>
-
-          
-            <h2>Constituency</h2>
-            <p class="person__constituency">Adavi</p>
-          
-
-                    
-
-          
-            <h2>Local Government Area</h2>
-            <p class="person__area"><a href="/place/adavi/">Adavi</a></p>
-          
-          
-          
-            <h2>Party</h2>
-            <p class="person__party">All Progressives Congress</p>
-                   
-
-          
-
-          
-            <h2>Phone</h2>
-            <p class="person__phone">08038470118</p>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-
+          <h1 class="person__name">Ogori/Magongo</h1>
+          <h2>Local Government Area (House of Assembly)</h2>
         </header>
 
         <section class="person__section">
-            <h2>Summary
-                <!-- <a class="person-edit-link" href="http://prose.io/#theyworkforyou/shineyoureye-prose/edit/gh-pages/summaries/0e0ab7e0-3ff3-422b-901a-2ee47f3b040c.md">Edit</a> -->
-            </h2>
-            <div class="person-summary">
-              
-            </div>
+            <h2>People</h2>
+            <ul class="contact-list">
+  
+    <li class="contact-list__item" id="akande-moses">
+        <a href="/person/akande-moses/">
+          
+            <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Akande Moses">
+          
+        </a>
+        <a href="/person/akande-moses/">
+            <h3 class="contact-list__item__name">Akande Moses</h3>
+        </a>
+        <p>
+          
+            <span class="test-party">All Progressives Congress</span>,
+            <a class="contact-list__item__area test-area" href="/place/ogorimagongo/">Ogori/Magongo</a>
+          
+        </p>
+    </li>
+  
+</ul>
+
         </section>
 
         <section class="person__section">
-          <div id="fb-root"></div>
+            <h2>Comments</h2>
+            <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -230,6 +212,7 @@
         </section>
     </div>
 </div>
+
 
           </div>
         </div>
@@ -275,6 +258,9 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="/javascripts/show-map.js"></script>
+    <script>LeafletMap.showMap([7.461503891191333, 6.153369844413548], { "type": "Polygon", "coordinates": [ [ [ 6.147007000000144, 7.494738 ], [ 6.155577000000108, 7.492291 ], [ 6.160474, 7.492291 ], [ 6.160474, 7.489840000000129 ], [ 6.161698000000114, 7.482495 ], [ 6.170268, 7.480047 ], [ 6.184959, 7.482495 ], [ 6.195979, 7.476373 ], [ 6.203324, 7.465358 ], [ 6.20822, 7.45801 ], [ 6.209444, 7.453112 ], [ 6.224135, 7.450664 ], [ 6.227809, 7.453112 ], [ 6.234084, 7.453112 ], [ 6.233724, 7.452982000000133 ], [ 6.22484900000012, 7.446676 ], [ 6.217191000000128, 7.444267 ], [ 6.198395000000119, 7.438359000000104 ], [ 6.189568, 7.43505 ], [ 6.180959, 7.430813 ], [ 6.16609, 7.425067 ], [ 6.163, 7.419584 ], [ 6.154749000000152, 7.423415000000147 ], [ 6.145797, 7.426567 ], [ 6.136311000000148, 7.425346 ], [ 6.128507000000127, 7.428247000000113 ], [ 6.123281, 7.433409 ], [ 6.121907, 7.434127 ], [ 6.111163, 7.440768 ], [ 6.109682, 7.449099 ], [ 6.106587000000103, 7.457689 ], [ 6.106762, 7.468528 ], [ 6.106634, 7.47499 ], [ 6.11032, 7.488767 ], [ 6.115598000000148, 7.501136 ], [ 6.118659, 7.504776 ], [ 6.121583000000101, 7.51182 ], [ 6.133542, 7.509430000000123 ], [ 6.139664, 7.504532 ], [ 6.150681, 7.500860000000158 ], [ 6.147007000000144, 7.494738 ] ] ] });</script>
 
 
   </body>

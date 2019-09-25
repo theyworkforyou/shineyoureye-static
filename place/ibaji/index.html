@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>Usman Ibrahim :: Shine your eye</title>
+  <title>Ibaji :: Shine your eye</title>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -129,32 +129,33 @@
           <div class="container">
              <div class="row">
     <div class="col-sm-4 col-md-3">
-      
-        <img class="person__image" src="/images/person-250x250.png" alt="Usman Ibrahim">
-      
-      <div class="panel panel-default">
+        <div class="person__image">
+            <div id="map-canvas"></div>
+        </div>
+
+        <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Usman Ibrahim</h3>
+        <h3 class="panel-title">Ibaji</h3>
     </div>
     <div class="panel-body">
 
         <ul class="social-actions">
             <li>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/person/usman-ibrahim/&amp;t=Usman Ibrahim"
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/place/ibaji/&amp;t=Ibaji"
                   target="_blank"
                   class="btn btn-block btn-facebook">Share on Facebook
                 </a>
             </li>
 
             <li>
-                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Usman Ibrahim&amp;url=http://localhost:9292/person/usman-ibrahim/"
+                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Ibaji&amp;url=http://localhost:9292/place/ibaji/"
                   target="_blank"
                   class="btn btn-block btn-twitter">Share on Twitter
                 </a>
             </li>
 
             <li>
-                <a href="http://localhost:9292/person/usman-ibrahim/#fb-root"
+                <a href="http://localhost:9292/place/ibaji/#fb-root"
                   class="btn btn-block btn-default">Comments <span class="fb-comments-count"></span>
                 </a>
             </li>
@@ -167,57 +168,38 @@
 
     <div class="col-sm-8 col-md-9">
         <header class="person__key-info">
-
-            <h2>State Representative</h2>
-            <h1 class="person__name">Usman Ibrahim</h1>
-
-          
-            <h2>Constituency</h2>
-            <p class="person__constituency">Adavi</p>
-          
-
-                    
-
-          
-            <h2>Local Government Area</h2>
-            <p class="person__area"><a href="/place/adavi/">Adavi</a></p>
-          
-          
-          
-            <h2>Party</h2>
-            <p class="person__party">All Progressives Congress</p>
-                   
-
-          
-
-          
-            <h2>Phone</h2>
-            <p class="person__phone">08038470118</p>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-
+          <h1 class="person__name">Ibaji</h1>
+          <h2>Local Government Area (House of Assembly)</h2>
         </header>
 
         <section class="person__section">
-            <h2>Summary
-                <!-- <a class="person-edit-link" href="http://prose.io/#theyworkforyou/shineyoureye-prose/edit/gh-pages/summaries/0e0ab7e0-3ff3-422b-901a-2ee47f3b040c.md">Edit</a> -->
-            </h2>
-            <div class="person-summary">
-              
-            </div>
+            <h2>People</h2>
+            <ul class="contact-list">
+  
+    <li class="contact-list__item" id="john-abah">
+        <a href="/person/john-abah/">
+          
+            <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="John Abah">
+          
+        </a>
+        <a href="/person/john-abah/">
+            <h3 class="contact-list__item__name">John Abah</h3>
+        </a>
+        <p>
+          
+            <span class="test-party">All Progressives Congress</span>,
+            <a class="contact-list__item__area test-area" href="/place/ibaji/">Ibaji</a>
+          
+        </p>
+    </li>
+  
+</ul>
+
         </section>
 
         <section class="person__section">
-          <div id="fb-root"></div>
+            <h2>Comments</h2>
+            <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -230,6 +212,7 @@
         </section>
     </div>
 </div>
+
 
           </div>
         </div>
@@ -275,6 +258,9 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="/javascripts/show-map.js"></script>
+    <script>LeafletMap.showMap([6.799306837831133, 6.76302748144251], { "type": "Polygon", "coordinates": [ [ [ 6.845056, 6.987191000000109 ], [ 6.850968, 6.982022000000143 ], [ 6.859996000000137, 6.983943000000124 ], [ 6.871405000000152, 6.990432 ], [ 6.8775, 6.996319 ], [ 6.887831, 6.993379 ], [ 6.902119, 6.992446 ], [ 6.906237, 6.990302 ], [ 6.903810000000134, 6.98297 ], [ 6.897077, 6.980319000000121 ], [ 6.893752, 6.974384 ], [ 6.899555000000134, 6.962303 ], [ 6.91299, 6.951477 ], [ 6.936174, 6.944402 ], [ 6.944967, 6.931810000000154 ], [ 6.954915000000142, 6.9192 ], [ 6.958888, 6.908073 ], [ 6.962352, 6.894188000000155 ], [ 6.964205, 6.880334 ], [ 6.965855, 6.868322000000148 ], [ 6.96818, 6.855149 ], [ 6.968426, 6.846488 ], [ 6.967174, 6.847813 ], [ 6.964715, 6.852931 ], [ 6.957144, 6.855828 ], [ 6.950006, 6.857105 ], [ 6.94325, 6.853296 ], [ 6.9399, 6.845971 ], [ 6.935075, 6.833135 ], [ 6.931893, 6.821885 ], [ 6.922155, 6.804978 ], [ 6.919262, 6.797414 ], [ 6.916865, 6.791919 ], [ 6.907247, 6.782395 ], [ 6.905936, 6.776175 ], [ 6.905745, 6.775268 ], [ 6.900273, 6.765210000000138 ], [ 6.890602000000115, 6.752456 ], [ 6.884262, 6.745874 ], [ 6.875145, 6.738877 ], [ 6.859335000000158, 6.731994 ], [ 6.84855, 6.721797 ], [ 6.839675, 6.715490000000102 ], [ 6.836564, 6.708621 ], [ 6.823181000000146, 6.694775 ], [ 6.82046, 6.683519 ], [ 6.815598000000136, 6.668376000000137 ], [ 6.811213, 6.654145 ], [ 6.80568600000015, 6.640630000000158 ], [ 6.803177, 6.628216000000123 ], [ 6.80457, 6.614349000000118 ], [ 6.803774, 6.607902000000138 ], [ 6.802892, 6.596153 ], [ 6.802238000000159, 6.584167 ], [ 6.799116, 6.576607000000138 ], [ 6.796558, 6.57062 ], [ 6.796419, 6.570476 ], [ 6.778865, 6.552268 ], [ 6.772493, 6.543609 ], [ 6.763139, 6.536154 ], [ 6.749405, 6.529237 ], [ 6.740189, 6.530318 ], [ 6.727523, 6.532380000000103 ], [ 6.711629, 6.534725000000151 ], [ 6.697156, 6.539126000000123 ], [ 6.691397000000109, 6.539917 ], [ 6.679071, 6.534358 ], [ 6.66815, 6.52993 ], [ 6.664391, 6.52745 ], [ 6.662898, 6.533711 ], [ 6.664002, 6.544767 ], [ 6.659275, 6.566763 ], [ 6.655630000000144, 6.584128 ], [ 6.654550000000142, 6.603063000000134 ], [ 6.650354, 6.614901000000144 ], [ 6.647744000000102, 6.624865 ], [ 6.640960000000121, 6.633747 ], [ 6.634170000000154, 6.642168 ], [ 6.624949, 6.657322000000135 ], [ 6.623283, 6.668654 ], [ 6.615850000000136, 6.680317000000116 ], [ 6.610617, 6.699322 ], [ 6.6131400000001, 6.726964 ], [ 6.61691, 6.746047000000146 ], [ 6.621961, 6.75865 ], [ 6.622136000000125, 6.76949 ], [ 6.62375, 6.778101 ], [ 6.625671, 6.788345000000105 ], [ 6.620769, 6.799274 ], [ 6.612536, 6.804258000000117 ], [ 6.60499, 6.823073 ], [ 6.62106, 6.846101 ], [ 6.627344000000107, 6.863527 ], [ 6.639852, 6.880384 ], [ 6.64678700000013, 6.895262 ], [ 6.650748000000134, 6.911804 ], [ 6.656599, 6.916781 ], [ 6.659307, 6.927117 ], [ 6.66632200000015, 6.947067 ], [ 6.670659, 6.958298 ], [ 6.670784, 6.959616 ], [ 6.671493000000112, 6.96705 ], [ 6.672649, 6.981564000000105 ], [ 6.6733, 6.993319000000155 ], [ 6.672555, 7.004405 ], [ 6.67152, 7.011805 ], [ 6.669663, 7.025448 ], [ 6.673426, 7.033352 ], [ 6.701774, 7.028329 ], [ 6.72542200000015, 7.021476 ], [ 6.741374, 7.016209000000117 ], [ 6.7504330000001, 7.013219 ], [ 6.782394000000124, 7.006684 ], [ 6.808089, 6.997955 ], [ 6.83545, 6.992421 ], [ 6.845056, 6.987191000000109 ] ] ] });</script>
 
 
   </body>
