@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>State House of Assembly :: Shine your eye</title>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-660910-14', 'auto');ga('send', 'pageview');
+</script>
+
+
+  <link rel="icon" href="/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link rel="stylesheet" type="text/css" href="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.css">
+  <link href="/stylesheets/main.css" rel="stylesheet" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+  <body class="">
+
+    <nav class="navbar navbar-default main-menu" id="main-menu">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-links" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ShineYourEye</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-menu-links">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/info/democracy-resources">Democracy Resources</a></li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Elections <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="elections">
+            <li><a href="/info/elections">Elections</a></li>
+            <li><a href="/info/inec-nationwide-continuous-voter-registration-exercise">Voting Information</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Government Officials <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/government-officials">Government Officials</a></li>
+            <li><a href="/position/executive-governor/">Governors</a></li>
+            <li><a href="/position/senator/">Senators</a></li>
+            <li><a href="/position/federal-representatives/">Federal Representatives</a></li>
+            <li><a href="/position/state-representatives/">State Representatives</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Places<span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/places-overview">Places</a></li>
+            <li><a href="/place/is/state/">States</a></li>
+            <li><a href="/place/is/senatorial-district/">Senatorial Districts</a></li>
+            <li><a href="/place/is/federal-constituency/">Federal Constituencies</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/events/">Events</a></li>
+
+        <li><a href="/blog/">Blog</a></li>
+
+        <li><a href="/info/about">About</a></li>
+
+        <li><a href="/contact/">Contact</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+    <div class="site-header">
+  <div class="container">
+
+    <form class="site-header__search js-multipurpose-search" action="https://sye-pu-lookup-frontend.herokuapp.com/lookup" method="post">
+      <label for="site-search">
+        <strong>Find your representative</strong>
+        <span class="js-multipurpose-search-label">Enter your Polling Unit (PU) number</span>
+      </label>
+      <p>
+        <span class="input-group">
+          <input name="pu-number" id="site-search" type="search" class="form-control" placeholder="e.g. 1:1:1">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search" aria-label="Search"></i></button>
+          </span>
+        </span>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+
+    <div id="page">
+
+      
+        <!-- {% include breadcrumbs.html %} -->
+        <div class="page-section">
+          <div class="container">
+             <h1 class="page-title text-center">State House of Assembly</h1>
+
+  <div class="page-section" id="term">
+    <div class="container text-center">
+        <h3><span class="avatar"><i class="glyphicon glyphicon-home"></i></span> Ekiti State</h3>
+        <p>2019-06-11 - current</p>
+    </div>
+  </div>
+
+<div class="content_box">
+  <div class="party-groupings__title text-center">
+    <h3>Members</h3>
+  </div>
+  <div class="principal-people-accordion people-accordion ui-widget-content ui-accordion ui-widget ui-helper-reset">
+    
+      <ul class="contact-list">
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="tope-ogunleye">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/tope-ogunleye/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/295c7855-babd-4b33-b6ca-7e097e8682aa/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/295c7855-babd-4b33-b6ca-7e097e8682aa/100x100.jpeg" alt="Tope Ogunleye">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/tope-ogunleye/">
+                  <h3 class="contact-list__item__name">Tope Ogunleye</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ilejemeje</span>
+                  <a class="contact-list__item__area test-area" href="/place/ilejemeje/">Ilejemeje</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="ajayi-oyedeji">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/ajayi-oyedeji/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/cff7ef1c-af34-4146-80d0-06672afa9c3a/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/cff7ef1c-af34-4146-80d0-06672afa9c3a/100x100.jpeg" alt="Ajayi Oyedeji">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/ajayi-oyedeji/">
+                  <h3 class="contact-list__item__name">Ajayi Oyedeji</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ise-Orun</span>
+                  <a class="contact-list__item__area test-area" href="/place/ise-orun/">Ise/Orun</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="akinoso-emmanuel">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/akinoso-emmanuel/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/e4eeac5a-d23f-43a2-9ca6-0d2e9a7f2428/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/e4eeac5a-d23f-43a2-9ca6-0d2e9a7f2428/100x100.jpeg" alt="Akinoso Emmanuel">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/akinoso-emmanuel/">
+                  <h3 class="contact-list__item__name">Akinoso Emmanuel</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ido/Osi II</span>
+                  <a class="contact-list__item__area test-area" href="/place/ido-osi/">Ido/Osi</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="ojo-ademola">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/ojo-ademola/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/6397c135-5a5d-48cb-95f0-28b12ca707b1/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/6397c135-5a5d-48cb-95f0-28b12ca707b1/100x100.jpeg" alt="Ojo Ademola">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/ojo-ademola/">
+                  <h3 class="contact-list__item__name">Ojo Ademola</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ijero</span>
+                  <a class="contact-list__item__area test-area" href="/place/ijero/">Ijero</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="adeoye-oyebola">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/adeoye-oyebola/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/a9878fd2-0950-423d-8702-971761d10fc4/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/a9878fd2-0950-423d-8702-971761d10fc4/100x100.jpeg" alt="Adeoye Oyebola">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/adeoye-oyebola/">
+                  <h3 class="contact-list__item__name">Adeoye Oyebola</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekiti West II</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekiti-west/">Ekiti West</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="adegoke-olajide">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/adegoke-olajide/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/f29628c8-55db-461b-b968-7f77ee5e1d82/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/f29628c8-55db-461b-b968-7f77ee5e1d82/100x100.jpeg" alt="Adegoke Olajide">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/adegoke-olajide/">
+                  <h3 class="contact-list__item__name">Adegoke Olajide</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Efon</span>
+                  <a class="contact-list__item__area test-area" href="/place/efon/">Efon</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="lucas-oluwatoyin">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/lucas-oluwatoyin/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/863a666e-3683-49d2-a13f-e59c1cbf9989/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/863a666e-3683-49d2-a13f-e59c1cbf9989/100x100.jpeg" alt="Lucas Oluwatoyin">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/lucas-oluwatoyin/">
+                  <h3 class="contact-list__item__name">Lucas Oluwatoyin</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ado I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ado-ekiti/">Ado-Ekiti</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="reuben-awoyemi">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/reuben-awoyemi/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/33e05cce-2add-4b46-aedb-34ae46212e51/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/33e05cce-2add-4b46-aedb-34ae46212e51/100x100.jpeg" alt="Reuben Awoyemi">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/reuben-awoyemi/">
+                  <h3 class="contact-list__item__name">Reuben Awoyemi</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Oye I</span>
+                  <a class="contact-list__item__area test-area" href="/place/oye/">Oye</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="afuye-funminiyi">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/afuye-funminiyi/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/d1e75f7b-5beb-4ce8-8961-91796bf09ed7/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/d1e75f7b-5beb-4ce8-8961-91796bf09ed7/100x100.jpeg" alt="Afuye Funminiyi">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/afuye-funminiyi/">
+                  <h3 class="contact-list__item__name">Afuye Funminiyi</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ikere I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ikere/">Ikere</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="adeyemi-raphael">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/adeyemi-raphael/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/f089b074-4973-4519-9ba7-7f3e4db022f4/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/f089b074-4973-4519-9ba7-7f3e4db022f4/100x100.jpeg" alt="Adeyemi Raphael">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/adeyemi-raphael/">
+                  <h3 class="contact-list__item__name">Adeyemi Raphael</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Moba I</span>
+                  <a class="contact-list__item__area test-area" href="/place/moba/">Moba</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="adeoye-aribasoye">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/adeoye-aribasoye/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/652da07e-40b1-419a-9fb7-cbaacc0c10ee/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/652da07e-40b1-419a-9fb7-cbaacc0c10ee/100x100.jpeg" alt="Adeoye Aribasoye">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/adeoye-aribasoye/">
+                  <h3 class="contact-list__item__name">Adeoye Aribasoye</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ikole II</span>
+                  <a class="contact-list__item__area test-area" href="/place/ikole/">Ikole</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="akindele-olanrewaju">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/akindele-olanrewaju/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/dfa0f09b-6fb2-44a7-be11-cff5fab43fe2/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/dfa0f09b-6fb2-44a7-be11-cff5fab43fe2/100x100.jpeg" alt="Akindele Olanrewaju">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/akindele-olanrewaju/">
+                  <h3 class="contact-list__item__name">Akindele Olanrewaju</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ireunpodun/Ifelodun</span>
+                  <a class="contact-list__item__area test-area" href="/place/irepodun-ifelodun/">Irepodun/Ifelodun</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="ayokunle-yemisi">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/ayokunle-yemisi/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/e46ec187-0fd1-40a3-b6c1-e00345bbf5e6/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/e46ec187-0fd1-40a3-b6c1-e00345bbf5e6/100x100.jpeg" alt="Ayokunle Yemisi">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/ayokunle-yemisi/">
+                  <h3 class="contact-list__item__name">Ayokunle Yemisi</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekiti South West I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekiti-south-west/">Ekiti South-West</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="fawekun-babatunde">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/fawekun-babatunde/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/e52093c9-d8de-49a1-870c-9c973d99dfe7/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/e52093c9-d8de-49a1-870c-9c973d99dfe7/100x100.jpeg" alt="Fawekun Babatunde">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/fawekun-babatunde/">
+                  <h3 class="contact-list__item__name">Fawekun Babatunde</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ido Osi I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ido-osi/">Ido/Osi</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="arubu-kola">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/arubu-kola/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/84d1f028-7697-4705-9884-a43b0ca7aa30/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/84d1f028-7697-4705-9884-a43b0ca7aa30/100x100.jpeg" alt="Arubu Kola">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/arubu-kola/">
+                  <h3 class="contact-list__item__name">Arubu Kola</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Moba II</span>
+                  <a class="contact-list__item__area test-area" href="/place/moba/">Moba</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="osatuyi-yemi">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/osatuyi-yemi/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/d6485ed2-e50b-4cab-8a9f-6002602df27a/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/d6485ed2-e50b-4cab-8a9f-6002602df27a/100x100.jpeg" alt="Osatuyi Yemi">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/osatuyi-yemi/">
+                  <h3 class="contact-list__item__name">Osatuyi Yemi</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Oye II</span>
+                  <a class="contact-list__item__area test-area" href="/place/oye/">Oye</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="adegbuyi-oluwajuwa">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/adegbuyi-oluwajuwa/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/54eec819-a696-46a0-89fe-da4affc7f7f6/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/54eec819-a696-46a0-89fe-da4affc7f7f6/100x100.jpeg" alt="Adegbuyi Oluwajuwa">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/adegbuyi-oluwajuwa/">
+                  <h3 class="contact-list__item__name">Adegbuyi Oluwajuwa</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekiti East I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekiti-east/">Ekiti East</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="babatunde-idowu">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/babatunde-idowu/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/23520550-89f1-4206-8375-c47734956770/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/23520550-89f1-4206-8375-c47734956770/100x100.jpeg" alt="Babatunde Idowu">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/babatunde-idowu/">
+                  <h3 class="contact-list__item__name">Babatunde Idowu</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ikere II</span>
+                  <a class="contact-list__item__area test-area" href="/place/ikere/">Ikere</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="adekemi-balogun">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/adekemi-balogun/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/03ebe7e2-d96c-4836-86ca-7a09f920e1be/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/03ebe7e2-d96c-4836-86ca-7a09f920e1be/100x100.jpeg" alt="Adekemi Balogun">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/adekemi-balogun/">
+                  <h3 class="contact-list__item__name">Adekemi Balogun</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ado II</span>
+                  <a class="contact-list__item__area test-area" href="/place/ado-ekiti/">Ado-Ekiti</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="olubunmi-adelugba">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/olubunmi-adelugba/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/5b63dca1-2949-4daf-a4b2-e8ed22e08135/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/5b63dca1-2949-4daf-a4b2-e8ed22e08135/100x100.jpeg" alt="Olubunmi Adelugba">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/olubunmi-adelugba/">
+                  <h3 class="contact-list__item__name">Olubunmi Adelugba</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Emure</span>
+                  <a class="contact-list__item__area test-area" href="/place/emure-ise-orun/">Emure/Ise/Orun</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="olatunji-joseph">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/olatunji-joseph/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/ddbb85c9-b1d0-4f4d-ad00-9d9fde5341f2/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/ddbb85c9-b1d0-4f4d-ad00-9d9fde5341f2/100x100.jpeg" alt="Olatunji Joseph">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/olatunji-joseph/">
+                  <h3 class="contact-list__item__name">Olatunji Joseph</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekiti South West II</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekiti-south-west/">Ekiti South-West</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="lateef-akanle">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/lateef-akanle/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/82a8abb7-a0da-4b14-869d-1f033d88e932/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/82a8abb7-a0da-4b14-869d-1f033d88e932/100x100.jpeg" alt="Lateef Akanle">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/lateef-akanle/">
+                  <h3 class="contact-list__item__name">Lateef Akanle</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekiti East II</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekiti-east/">Ekiti East</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="teju-okuyiga">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/teju-okuyiga/">
+                
+                  <img class="contact-list__item__photo" src="https://theyworkforyou.github.io/shineyoureye-images/Honorables/c1dfbda5-358b-456d-b006-0a64c6412757/100x100.jpeg" srcset="https://theyworkforyou.github.io/shineyoureye-images/Honorables/c1dfbda5-358b-456d-b006-0a64c6412757/100x100.jpeg" alt="Teju Okuyiga">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/teju-okuyiga/">
+                  <h3 class="contact-list__item__name">Teju Okuyiga</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Gbonyin</span>
+                  <a class="contact-list__item__area test-area" href="/place/gbonyin/">Gbonyin</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="adejuwa-adegbuyi">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/adejuwa-adegbuyi/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Adejuwa Adegbuyi">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/adejuwa-adegbuyi/">
+                  <h3 class="contact-list__item__name">Adejuwa Adegbuyi</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekiti East I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekiti-east/">Ekiti East</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="tajudeen-akingbolu">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/tajudeen-akingbolu/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Tajudeen Akingbolu">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/tajudeen-akingbolu/">
+                  <h3 class="contact-list__item__name">Tajudeen Akingbolu</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekiti West I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekiti-west/">Ekiti West</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="gboyega-aribisogan">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/gboyega-aribisogan/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Gboyega Aribisogan">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/gboyega-aribisogan/">
+                  <h3 class="contact-list__item__name">Gboyega Aribisogan</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ikole I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ikole/">Ikole</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+</ul> 
+    
+  </div>
+</div>
+          </div>
+        </div>
+
+      
+
+    </div>
+
+    <div class="site-footer">
+  <div class="container">
+    <div class="site-footer__primary">
+      <h3>Shine Your Eye</h3>
+      <p>Shine your Eye is an initiative of <a href="https://eie.ng" target="_blank" title="EiE Nigeria">Enough is Enough Nigeria (EiENigeria)</a>  with support from <a href="https://www.placng.org/" target="_blank" title="PLAC NG">Policy and Legal Advocacy Center</a>. <a href="/info/about">Read more.</a></p>
+      <ul class="list-inline">
+        <li><a href="mailto:syeinfo@eienigeria.org">syeinfo@eienigeria.org</a></li>
+        <li><a href="https://twitter.com/NGShineYourEye">@NGShineYourEye</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__secondary">
+      <ul class="list-inline">
+        <li><a class="btn btn-primary" href="/search/">Find your Representative</a></li>
+        <li><a class="btn btn-default" href="/blog/">Latest News</a></li>
+        <li><a class="btn btn-default" href="/info/democracy-resources">Democractic Resources</a></li>
+        <li><a class="btn btn-default" href="/info/elections">Elections</a></li>
+        <li><a class="btn btn-default" href="/events/">Events</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+<script src="/javascripts/multipurpose-search.js"></script>
+<script>
+  (function() {
+    var cx = '009849292720701569670:dnm2ccnvkai';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+  </body>
+</html>
