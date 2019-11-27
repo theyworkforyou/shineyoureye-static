@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Becoming An Active Citizen :: Shine your eye</title>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-660910-14', 'auto');ga('send', 'pageview');
+</script>
+
+
+  <link rel="icon" href="/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link rel="stylesheet" type="text/css" href="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.css">
+  <link href="/stylesheets/main.css" rel="stylesheet" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+  <body class="">
+
+    <nav class="navbar navbar-default main-menu" id="main-menu">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-links" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ShineYourEye</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-menu-links">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/info/democracy-resources">Democracy Resources</a></li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Elections <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="elections">
+            <li><a href="/info/elections">Elections</a></li>
+            <li><a href="/info/inec-nationwide-continuous-voter-registration-exercise">Voting Information</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Government Officials <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/government-officials">Government Officials</a></li>
+            <li><a href="/position/executive-governor/">Governors</a></li>
+            <li><a href="/position/senator/">Senators</a></li>
+            <li><a href="/position/federal-representatives/">Federal Representatives</a></li>
+            <li><a href="/position/state-representatives/">State Representatives</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Places<span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/places-overview">Places</a></li>
+            <li><a href="/place/is/state/">States</a></li>
+            <li><a href="/place/is/senatorial-district/">Senatorial Districts</a></li>
+            <li><a href="/place/is/federal-constituency/">Federal Constituencies</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/events/">Events</a></li>
+
+        <li><a href="/blog/">Blog</a></li>
+
+        <li><a href="/info/about">About</a></li>
+
+        <li><a href="/contact/">Contact</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+    <div class="site-header">
+  <div class="container">
+
+    <form class="site-header__search js-multipurpose-search" action="https://sye-pu-lookup-frontend.herokuapp.com/lookup" method="post">
+      <label for="site-search">
+        <strong>Find your representative</strong>
+        <span class="js-multipurpose-search-label">Enter your Polling Unit (PU) number</span>
+      </label>
+      <p>
+        <span class="input-group">
+          <input name="pu-number" id="site-search" type="search" class="form-control" placeholder="e.g. 1:1:1">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search" aria-label="Search"></i></button>
+          </span>
+        </span>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+
+    <div id="page">
+
+      
+        <!-- {% include breadcrumbs.html %} -->
+        <div class="page-section">
+          <div class="container">
+             <div class="blog-post">
+
+  <h1 class="page-title">Becoming An Active Citizen</h1>
+
+  <p class="meta">November 27, 2019</p>
+
+  <div class="markdown infopage">
+    <p>The title “active citizen” is not a name given as a birthday gift to every individual, it is a title one must occupy as a responsible citizen who want the development of his/her country.</p>
+
+<p>Active citizenship is one of the most important steps towards healthy societies. It is a combination of knowledge, attitude, skills and actions that aim to contribute to building and maintaining a democratic society. Active citizenship supports democratic cooperation that is based on the acceptance of universal human rights and the rule of law, values diversity and includes the whole community</p>
+
+<p>Active citizenship means people getting involved in their local communities and democracy at all levels, from towns to cities to nationwide activities. It entails holding your representatives accountable and knowing just how well they have fulfil their promises during campaign.</p>
+
+<p>Many citizens would assume that holding politicians accountable for their actions is not too difficult in a representative democracy that values civic engagement. But in Nigeria today, we are faced with a political process often more catered to moneyed interests than the will of the people. This has promoted political apathy among many Nigerians. The question now is when our elected officials are going astray, how can we put them back on track  — so what can ordinary citizens really do to hold representatives accountable?</p>
+
+<p>Knowing your state and local representatives — and how to contact them — is key for holding politicians accountable and fueling civic engagement. You can find contact details of your elected representatives – governor, senator, house of representatives member, state house of assembly members – on this website (shineyoureye.org) . Add your representatives’ office numbers to your cell phone so you can quickly let your voice be heard when you have an opinion on new legislation. All you have to do is dial, identify yourself as a constituent, and state your case — it takes less than five minutes.</p>
+
+<p>Email, social media, and cell phones mean political participation can be done from the comfort of your home, but there’s something to be said for the knowledge and support gained at in-person events. Show up at public forums, public hearings, speaking events, and other gatherings your representatives hold locally. Encourage friends, family, and members of any political organizations you may be a part of to join as well. Showing politicians you are paying attention to their activities will keep them on their toes.</p>
+
+<p>Showing support or opposition to current political initiatives has a tenfold effect if you take it to the public. Creating a public display like a rally, march, or open forum can offer your ideas more reach and even get picked up by the media. The widespread use of social media and mobile devices means drumming up support is easier than ever. Email blasts, petitions, and fliers or brochures can also be a great way to rally others in your local community for civic engagement.</p>
+
+<p>Enough is Enough Nigeria has a radio program tagged  <em>'Office  Of The Citizen'</em> - <a href="https://eie.ng/radio-programmes/">eie.ng/radioprogrammes</a>. The program is a 60-minute weekly program that tackle issues that may revolve around access to electricity, holding public officials accountable, getting good services from government and privately owned agencies, and other topical issues that may be relevant to the host community. Unlike other call-in programs, the distinguishing factor of this programme would be its singular objective of educating listeners and helping callers solve problems related to the focus areas. Callers will be allowed to vent, but ultimately, the focus will be on how to help them turn their anger/frustrations into action and results.</p>
+
+<p>Keeping tabs on your legislators and actively participating in the political process is the first step to holding our politicians accountable.</p>
+
+<p>No one is born an active citizen; no nation is born a democracy. Rather, both are processes that continue to evolve over a lifetime. Young people must be included from birth. A society that cuts off from its youth severs its lifeline. We will have better government in all of our countries when men and women discuss public issues together and make their decisions on the basis of their different areas of experience and their common concern for the welfare of their families and their world.</p>
+
+<p>Revving up civic engagement is not easy by any means, but if constituents are steadfast in their efforts, there will be great changes.</p>
+
+  </div>
+
+</div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments"></div>
+
+          </div>
+        </div>
+
+      
+
+    </div>
+
+    <div class="site-footer">
+  <div class="container">
+    <div class="site-footer__primary">
+      <h3>Shine Your Eye</h3>
+      <p>Shine your Eye is an initiative of <a href="https://eie.ng" target="_blank" title="EiE Nigeria">Enough is Enough Nigeria (EiENigeria)</a>  with support from <a href="https://www.placng.org/" target="_blank" title="PLAC NG">Policy and Legal Advocacy Center</a>. <a href="/info/about">Read more.</a></p>
+      <ul class="list-inline">
+        <li><a href="mailto:syeinfo@eienigeria.org">syeinfo@eienigeria.org</a></li>
+        <li><a href="https://twitter.com/NGShineYourEye">@NGShineYourEye</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__secondary">
+      <ul class="list-inline">
+        <li><a class="btn btn-primary" href="/search/">Find your Representative</a></li>
+        <li><a class="btn btn-default" href="/blog/">Latest News</a></li>
+        <li><a class="btn btn-default" href="/info/democracy-resources">Democractic Resources</a></li>
+        <li><a class="btn btn-default" href="/info/elections">Elections</a></li>
+        <li><a class="btn btn-default" href="/events/">Events</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+<script src="/javascripts/multipurpose-search.js"></script>
+<script>
+  (function() {
+    var cx = '009849292720701569670:dnm2ccnvkai';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+  </body>
+</html>
