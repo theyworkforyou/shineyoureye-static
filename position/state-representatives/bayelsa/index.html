@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>State House of Assembly :: Shine your eye</title>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-660910-14', 'auto');ga('send', 'pageview');
+</script>
+
+
+  <link rel="icon" href="/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link rel="stylesheet" type="text/css" href="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.css">
+  <link href="/stylesheets/main.css" rel="stylesheet" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+  <body class="">
+
+    <nav class="navbar navbar-default main-menu" id="main-menu">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-links" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ShineYourEye</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-menu-links">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/info/democracy-resources">Democracy Resources</a></li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Elections <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="elections">
+            <li><a href="/info/elections">Elections</a></li>
+            <li><a href="/info/inec-nationwide-continuous-voter-registration-exercise">Voting Information</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Government Officials <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/government-officials">Government Officials</a></li>
+            <li><a href="/position/executive-governor/">Governors</a></li>
+            <li><a href="/position/senator/">Senators</a></li>
+            <li><a href="/position/federal-representatives/">Federal Representatives</a></li>
+            <li><a href="/position/state-representatives/">State Representatives</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Places<span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/places-overview">Places</a></li>
+            <li><a href="/place/is/state/">States</a></li>
+            <li><a href="/place/is/senatorial-district/">Senatorial Districts</a></li>
+            <li><a href="/place/is/federal-constituency/">Federal Constituencies</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/events/">Events</a></li>
+
+        <li><a href="/blog/">Blog</a></li>
+
+        <li><a href="/info/about">About</a></li>
+
+        <li><a href="/contact/">Contact</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+    <div class="site-header">
+  <div class="container">
+
+    <form class="site-header__search js-multipurpose-search" action="https://sye-pu-lookup-frontend.herokuapp.com/lookup" method="post">
+      <label for="site-search">
+        <strong>Find your representative</strong>
+        <span class="js-multipurpose-search-label">Enter your Polling Unit (PU) number</span>
+      </label>
+      <p>
+        <span class="input-group">
+          <input name="pu-number" id="site-search" type="search" class="form-control" placeholder="e.g. 1:1:1">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search" aria-label="Search"></i></button>
+          </span>
+        </span>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+
+    <div id="page">
+
+      
+        <!-- {% include breadcrumbs.html %} -->
+        <div class="page-section">
+          <div class="container">
+             <h1 class="page-title text-center">State House of Assembly</h1>
+
+  <div class="page-section" id="term">
+    <div class="container text-center">
+        <h3><span class="avatar"><i class="glyphicon glyphicon-home"></i></span> Bayelsa State</h3>
+        <p>2019-06-11 - current</p>
+    </div>
+  </div>
+
+<div class="content_box">
+  <div class="party-groupings__title text-center">
+    <h3>Members</h3>
+  </div>
+  <div class="principal-people-accordion people-accordion ui-widget-content ui-accordion ui-widget ui-helper-reset">
+    
+      <ul class="contact-list">
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="charles-daniel">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/charles-daniel/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Charles Daniel">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/charles-daniel/">
+                  <h3 class="contact-list__item__name">Charles Daniel</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Brass I</span>
+                  <a class="contact-list__item__area test-area" href="/place/brass/">Brass</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="omubo-ayonatiminyo">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/omubo-ayonatiminyo/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Omubo Ayonatiminyo">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/omubo-ayonatiminyo/">
+                  <h3 class="contact-list__item__name">Omubo Ayonatiminyo</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Brass Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/brass/">Brass</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="ingobere-abraham">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/ingobere-abraham/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Ingobere Abraham">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/ingobere-abraham/">
+                  <h3 class="contact-list__item__name">Ingobere Abraham</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Brass Iii</span>
+                  <a class="contact-list__item__area test-area" href="/place/brass/">Brass</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="ololo-ebi-ben">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/ololo-ebi-ben/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Ololo Ebi Ben">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/ololo-ebi-ben/">
+                  <h3 class="contact-list__item__name">Ololo Ben</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Nembe I</span>
+                  <a class="contact-list__item__area test-area" href="/place/nembe/">Nembe</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="edward-irigha">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/edward-irigha/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Edward Irigha">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/edward-irigha/">
+                  <h3 class="contact-list__item__name">Edward Irigha</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Nembe Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/nembe/">Nembe</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="douglas-samspon">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/douglas-samspon/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Douglas Samspon">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/douglas-samspon/">
+                  <h3 class="contact-list__item__name">Douglas Samspon</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Nembe Iii</span>
+                  <a class="contact-list__item__area test-area" href="/place/nembe/">Nembe</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="obordor-mitema">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/obordor-mitema/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Obordor Mitema">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/obordor-mitema/">
+                  <h3 class="contact-list__item__name">Obordor Mitema</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ogbia I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ogbia/">Ogbia</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="munalayefa-gibson">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/munalayefa-gibson/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Munalayefa Gibson">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/munalayefa-gibson/">
+                  <h3 class="contact-list__item__name">Munalayefa Gibson</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ogbia Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/ogbia/">Ogbia</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="ogoli-naomi">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/ogoli-naomi/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Ogoli Naomi">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/ogoli-naomi/">
+                  <h3 class="contact-list__item__name">Ogoli Naomi</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ogbia Iii</span>
+                  <a class="contact-list__item__area test-area" href="/place/ogbia/">Ogbia</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="isenah-tonye">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/isenah-tonye/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Isenah Tonye">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/isenah-tonye/">
+                  <h3 class="contact-list__item__name">Isenah Tonye</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Kolokuma/Opokuma I</span>
+                  <a class="contact-list__item__area test-area" href="/place/kolokumaopokuma/">Kolokuma/Opokuma</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="fafi-wisdom">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/fafi-wisdom/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Fafi Wisdom">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/fafi-wisdom/">
+                  <h3 class="contact-list__item__name">Fafi Wisdom</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Kolokuma/Opokuma Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/kolokumaopokuma/">Kolokuma/Opokuma</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="oforji-oboku">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/oforji-oboku/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Oforji Oboku">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/oforji-oboku/">
+                  <h3 class="contact-list__item__name">Oforji Oboku</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Yenagoa I</span>
+                  <a class="contact-list__item__area test-area" href="/place/yenegoa/">Yenegoa</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="koku-obiyai">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/koku-obiyai/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Koku Obiyai">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/koku-obiyai/">
+                  <h3 class="contact-list__item__name">Koku Obiyai</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Yenagoa Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/yenegoa/">Yenegoa</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="elemefuro-teddy">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/elemefuro-teddy/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Elemefuro Teddy">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/elemefuro-teddy/">
+                  <h3 class="contact-list__item__name">Elemefuro Teddy</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Yenagoa Iii</span>
+                  <a class="contact-list__item__area test-area" href="/place/yenegoa/">Yenegoa</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="porri-tare">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/porri-tare/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Porri Tare">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/porri-tare/">
+                  <h3 class="contact-list__item__name">Porri Tare</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekeremor I</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekeremor/">Ekeremor</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="wilson-ayakpo-ohuyegha">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/wilson-ayakpo-ohuyegha/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Wilson Ayakpo Ohuyegha">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/wilson-ayakpo-ohuyegha/">
+                  <h3 class="contact-list__item__name">Wilson Ohuyegha</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekeremor Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekeremor/">Ekeremor</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="ogbere-michael">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/ogbere-michael/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Ogbere Michael">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/ogbere-michael/">
+                  <h3 class="contact-list__item__name">Ogbere Michael</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Ekeremor Iii</span>
+                  <a class="contact-list__item__area test-area" href="/place/ekeremor/">Ekeremor</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="onyinke-godbless">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/onyinke-godbless/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Onyinke Godbless">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/onyinke-godbless/">
+                  <h3 class="contact-list__item__name">Onyinke Godbless</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Sagbama I</span>
+                  <a class="contact-list__item__area test-area" href="/place/sagbama/">Sagbama</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="kenebai-bernard">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/kenebai-bernard/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Kenebai Bernard">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/kenebai-bernard/">
+                  <h3 class="contact-list__item__name">Kenebai Bernard</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Sagbama Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/sagbama/">Sagbama</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="adikumo-salo">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/adikumo-salo/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Adikumo Salo">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/adikumo-salo/">
+                  <h3 class="contact-list__item__name">Adikumo Salo</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Sagbama Iii</span>
+                  <a class="contact-list__item__area test-area" href="/place/sagbama/">Sagbama</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="ayah-bonny">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/ayah-bonny/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Ayah Bonny">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/ayah-bonny/">
+                  <h3 class="contact-list__item__name">Ayah Bonny</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Southern Ijaw I</span>
+                  <a class="contact-list__item__area test-area" href="/place/southern-ijaw/">Southern Ijaw</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="obolo-bubou">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/obolo-bubou/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Obolo Bubou">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/obolo-bubou/">
+                  <h3 class="contact-list__item__name">Obolo Bubou</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Southern Ijaw Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/southern-ijaw/">Southern Ijaw</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="party-to-submit-name">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/party-to-submit-name/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Party To Submit Name">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/party-to-submit-name/">
+                  <h3 class="contact-list__item__name">Party Name</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Southern Ijaw Iii</span>
+                  <a class="contact-list__item__area test-area" href="/place/southern-ijaw/">Southern Ijaw</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="igbadiwe-macdonald">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/igbadiwe-macdonald/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Igbadiwe Macdonald">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/igbadiwe-macdonald/">
+                  <h3 class="contact-list__item__name">Igbadiwe Macdonald</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Southern Ijaw Iv</span>
+                  <a class="contact-list__item__area test-area" href="/place/southern-ijaw/">Southern Ijaw</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+</ul> 
+    
+  </div>
+</div>
+          </div>
+        </div>
+
+      
+
+    </div>
+
+    <div class="site-footer">
+  <div class="container">
+    <div class="site-footer__primary">
+      <h3>Shine Your Eye</h3>
+      <p>Shine your Eye is an initiative of <a href="https://eie.ng" target="_blank" title="EiE Nigeria">Enough is Enough Nigeria (EiENigeria)</a>  with support from <a href="https://www.placng.org/" target="_blank" title="PLAC NG">Policy and Legal Advocacy Center</a>. <a href="/info/about">Read more.</a></p>
+      <ul class="list-inline">
+        <li><a href="mailto:syeinfo@eienigeria.org">syeinfo@eienigeria.org</a></li>
+        <li><a href="https://twitter.com/NGShineYourEye">@NGShineYourEye</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__secondary">
+      <ul class="list-inline">
+        <li><a class="btn btn-primary" href="/search/">Find your Representative</a></li>
+        <li><a class="btn btn-default" href="/blog/">Latest News</a></li>
+        <li><a class="btn btn-default" href="/info/democracy-resources">Democractic Resources</a></li>
+        <li><a class="btn btn-default" href="/info/elections">Elections</a></li>
+        <li><a class="btn btn-default" href="/events/">Events</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+<script src="/javascripts/multipurpose-search.js"></script>
+<script>
+  (function() {
+    var cx = '009849292720701569670:dnm2ccnvkai';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+  </body>
+</html>
