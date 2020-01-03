@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Kontagora :: Shine your eye</title>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-660910-14', 'auto');ga('send', 'pageview');
+</script>
+
+
+  <link rel="icon" href="/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link rel="stylesheet" type="text/css" href="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.css">
+  <link href="/stylesheets/main.css" rel="stylesheet" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+  <body class="">
+
+    <nav class="navbar navbar-default main-menu" id="main-menu">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-links" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ShineYourEye</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-menu-links">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/info/democracy-resources">Democracy Resources</a></li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Elections <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="elections">
+            <li><a href="/info/elections">Elections</a></li>
+            <li><a href="/info/inec-nationwide-continuous-voter-registration-exercise">Voting Information</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Government Officials <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/government-officials">Government Officials</a></li>
+            <li><a href="/position/executive-governor/">Governors</a></li>
+            <li><a href="/position/senator/">Senators</a></li>
+            <li><a href="/position/federal-representatives/">Federal Representatives</a></li>
+            <li><a href="/position/state-representatives/">State Representatives</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Places<span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/places-overview">Places</a></li>
+            <li><a href="/place/is/state/">States</a></li>
+            <li><a href="/place/is/senatorial-district/">Senatorial Districts</a></li>
+            <li><a href="/place/is/federal-constituency/">Federal Constituencies</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/events/">Events</a></li>
+
+        <li><a href="/blog/">Blog</a></li>
+
+        <li><a href="/info/about">About</a></li>
+
+        <li><a href="/contact/">Contact</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+    <div class="site-header">
+  <div class="container">
+
+    <form class="site-header__search js-multipurpose-search" action="https://sye-pu-lookup-frontend.herokuapp.com/lookup" method="post">
+      <label for="site-search">
+        <strong>Find your representative</strong>
+        <span class="js-multipurpose-search-label">Enter your Polling Unit (PU) number</span>
+      </label>
+      <p>
+        <span class="input-group">
+          <input name="pu-number" id="site-search" type="search" class="form-control" placeholder="e.g. 1:1:1">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search" aria-label="Search"></i></button>
+          </span>
+        </span>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+
+    <div id="page">
+
+      
+        <!-- {% include breadcrumbs.html %} -->
+        <div class="page-section">
+          <div class="container">
+             <div class="row">
+    <div class="col-sm-4 col-md-3">
+        <div class="person__image">
+            <div id="map-canvas"></div>
+        </div>
+
+        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Kontagora</h3>
+    </div>
+    <div class="panel-body">
+
+        <ul class="social-actions">
+            <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9292/place/kontagora/&amp;t=Kontagora"
+                  target="_blank"
+                  class="btn btn-block btn-facebook">Share on Facebook
+                </a>
+            </li>
+
+            <li>
+                <a href="https://twitter.com/share?via=NGShineYourEye&amp;text=Kontagora&amp;url=http://localhost:9292/place/kontagora/"
+                  target="_blank"
+                  class="btn btn-block btn-twitter">Share on Twitter
+                </a>
+            </li>
+
+            <li>
+                <a href="http://localhost:9292/place/kontagora/#fb-root"
+                  class="btn btn-block btn-default">Comments <span class="fb-comments-count"></span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+    </div>
+
+    <div class="col-sm-8 col-md-9">
+        <header class="person__key-info">
+          <h1 class="person__name">Kontagora</h1>
+          <h2>Local Government Area (House of Assembly)</h2>
+        </header>
+
+        <section class="person__section">
+            <h2>People</h2>
+            <ul class="contact-list">
+  
+    <li class="contact-list__item" id="bako-phalal">
+        <a href="/person/bako-phalal/">
+          
+            <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Bako Phalal">
+          
+        </a>
+        <a href="/person/bako-phalal/">
+            <h3 class="contact-list__item__name">Bako Phalal</h3>
+        </a>
+        <p>
+          
+            <span class="test-party">All Progressives Congress</span>,
+            <a class="contact-list__item__area test-area" href="/place/kontagora/">Kontagora</a>
+          
+        </p>
+    </li>
+  
+    <li class="contact-list__item" id="sale-ibrahim-a">
+        <a href="/person/sale-ibrahim-a/">
+          
+            <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Sale Ibrahim A.">
+          
+        </a>
+        <a href="/person/sale-ibrahim-a/">
+            <h3 class="contact-list__item__name">Sale Ibrahim A.</h3>
+        </a>
+        <p>
+          
+            <span class="test-party">All Progressives Congress</span>,
+            <a class="contact-list__item__area test-area" href="/place/kontagora/">Kontagora</a>
+          
+        </p>
+    </li>
+  
+</ul>
+
+        </section>
+
+        <section class="person__section">
+            <h2>Comments</h2>
+            <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments"></div>
+
+        </section>
+    </div>
+</div>
+
+
+          </div>
+        </div>
+
+      
+
+    </div>
+
+    <div class="site-footer">
+  <div class="container">
+    <div class="site-footer__primary">
+      <h3>Shine Your Eye</h3>
+      <p>Shine your Eye is an initiative of <a href="https://eie.ng" target="_blank" title="EiE Nigeria">Enough is Enough Nigeria (EiENigeria)</a>  with support from <a href="https://www.placng.org/" target="_blank" title="PLAC NG">Policy and Legal Advocacy Center</a>. <a href="/info/about">Read more.</a></p>
+      <ul class="list-inline">
+        <li><a href="mailto:syeinfo@eienigeria.org">syeinfo@eienigeria.org</a></li>
+        <li><a href="https://twitter.com/NGShineYourEye">@NGShineYourEye</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__secondary">
+      <ul class="list-inline">
+        <li><a class="btn btn-primary" href="/search/">Find your Representative</a></li>
+        <li><a class="btn btn-default" href="/blog/">Latest News</a></li>
+        <li><a class="btn btn-default" href="/info/democracy-resources">Democractic Resources</a></li>
+        <li><a class="btn btn-default" href="/info/elections">Elections</a></li>
+        <li><a class="btn btn-default" href="/events/">Events</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+<script src="/javascripts/multipurpose-search.js"></script>
+<script>
+  (function() {
+    var cx = '009849292720701569670:dnm2ccnvkai';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="/javascripts/show-map.js"></script>
+    <script>LeafletMap.showMap([10.424719825652328, 5.4751403814386], { "type": "Polygon", "coordinates": [ [ [ 5.567022, 10.693355 ], [ 5.575967, 10.675664000000154 ], [ 5.589708, 10.659403000000111 ], [ 5.596801, 10.644224 ], [ 5.602294, 10.625334000000123 ], [ 5.605696, 10.606654 ], [ 5.609796, 10.587749 ], [ 5.620394, 10.569835 ], [ 5.633244000000104, 10.560951 ], [ 5.648024, 10.542615 ], [ 5.6556, 10.52513 ], [ 5.660842000000116, 10.508549 ], [ 5.661478000000159, 10.4873 ], [ 5.65974100000011, 10.472035 ], [ 5.663735, 10.43742200000014 ], [ 5.665649, 10.4014 ], [ 5.666258, 10.38361600000013 ], [ 5.67245, 10.364503 ], [ 5.680511, 10.344251 ], [ 5.685293, 10.327203 ], [ 5.68923100000012, 10.299518 ], [ 5.693552, 10.282003000000145 ], [ 5.696711, 10.26470600000016 ], [ 5.701258, 10.248117 ], [ 5.703884, 10.229129000000114 ], [ 5.703503, 10.228965 ], [ 5.676379, 10.221767000000114 ], [ 5.654814000000158, 10.216706 ], [ 5.622334, 10.211304 ], [ 5.598351, 10.218233 ], [ 5.568389, 10.217246000000102 ], [ 5.536139000000105, 10.212079 ], [ 5.517113, 10.20911800000016 ], [ 5.500886, 10.204802 ], [ 5.471929, 10.194354 ], [ 5.451036000000101, 10.1923010000001 ], [ 5.436637000000133, 10.191929 ], [ 5.427281, 10.199922 ], [ 5.417431, 10.211377 ], [ 5.407566000000144, 10.22491 ], [ 5.388137, 10.243433 ], [ 5.377623000000142, 10.250954 ], [ 5.357651, 10.250065 ], [ 5.337928, 10.24687 ], [ 5.321702, 10.242321 ], [ 5.303834, 10.239834 ], [ 5.291007, 10.246179 ], [ 5.284117, 10.249115 ], [ 5.272304000000133, 10.25569 ], [ 5.260879, 10.258345 ], [ 5.251876, 10.257561 ], [ 5.239289, 10.257664000000148 ], [ 5.228755, 10.259635 ], [ 5.2173, 10.260444 ], [ 5.205729, 10.268178 ], [ 5.186789000000147, 10.279072 ], [ 5.178741, 10.281991 ], [ 5.164082, 10.278839 ], [ 5.150095, 10.278249 ], [ 5.177103, 10.306918 ], [ 5.190953, 10.330384000000151 ], [ 5.199955, 10.34572100000014 ], [ 5.245167, 10.361886 ], [ 5.268699, 10.357278 ], [ 5.300577000000146, 10.354365 ], [ 5.329568, 10.368519 ], [ 5.339418, 10.39495 ], [ 5.343753000000106, 10.428250000000105 ], [ 5.324506, 10.46293 ], [ 5.317616, 10.497272 ], [ 5.314571, 10.53304 ], [ 5.317632, 10.571179 ], [ 5.337355000000116, 10.596555 ], [ 5.349118, 10.615844 ], [ 5.352457, 10.642899 ], [ 5.35704, 10.663040000000137 ], [ 5.356368, 10.679949000000136 ], [ 5.362075, 10.683416 ], [ 5.378742, 10.685433 ], [ 5.394083000000137, 10.689054000000111 ], [ 5.415108000000146, 10.69666 ], [ 5.425202, 10.695376 ], [ 5.444315, 10.695572000000141 ], [ 5.462469, 10.69206000000014 ], [ 5.48215800000014, 10.686025000000143 ], [ 5.503176, 10.678616000000147 ], [ 5.514825000000144, 10.675965 ], [ 5.537354, 10.693747 ], [ 5.54735, 10.700546 ], [ 5.554161, 10.704773 ], [ 5.567022, 10.693355 ] ] ] });</script>
+
+
+  </body>
+</html>
