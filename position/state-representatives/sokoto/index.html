@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>State House of Assembly :: Shine your eye</title>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-660910-14', 'auto');ga('send', 'pageview');
+</script>
+
+
+  <link rel="icon" href="/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link rel="stylesheet" type="text/css" href="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.css">
+  <link href="/stylesheets/main.css" rel="stylesheet" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+  <body class="">
+
+    <nav class="navbar navbar-default main-menu" id="main-menu">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-links" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ShineYourEye</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-menu-links">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/info/democracy-resources">Democracy Resources</a></li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Elections <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="elections">
+            <li><a href="/info/elections">Elections</a></li>
+            <li><a href="/info/inec-nationwide-continuous-voter-registration-exercise">Voting Information</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Government Officials <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/government-officials">Government Officials</a></li>
+            <li><a href="/position/executive-governor/">Governors</a></li>
+            <li><a href="/position/senator/">Senators</a></li>
+            <li><a href="/position/federal-representatives/">Federal Representatives</a></li>
+            <li><a href="/position/state-representatives/">State Representatives</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Places<span class="caret"></span></a>
+          <ul class="dropdown-menu" id="government-officials">
+            <li><a href="/info/places-overview">Places</a></li>
+            <li><a href="/place/is/state/">States</a></li>
+            <li><a href="/place/is/senatorial-district/">Senatorial Districts</a></li>
+            <li><a href="/place/is/federal-constituency/">Federal Constituencies</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/events/">Events</a></li>
+
+        <li><a href="/blog/">Blog</a></li>
+
+        <li><a href="/info/about">About</a></li>
+
+        <li><a href="/contact/">Contact</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+    <div class="site-header">
+  <div class="container">
+
+    <form class="site-header__search js-multipurpose-search" action="https://sye-pu-lookup-frontend.herokuapp.com/lookup" method="post">
+      <label for="site-search">
+        <strong>Find your representative</strong>
+        <span class="js-multipurpose-search-label">Enter your Polling Unit (PU) number</span>
+      </label>
+      <p>
+        <span class="input-group">
+          <input name="pu-number" id="site-search" type="search" class="form-control" placeholder="e.g. 1:1:1">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search" aria-label="Search"></i></button>
+          </span>
+        </span>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+
+    <div id="page">
+
+      
+        <!-- {% include breadcrumbs.html %} -->
+        <div class="page-section">
+          <div class="container">
+             <h1 class="page-title text-center">State House of Assembly</h1>
+
+  <div class="page-section" id="term">
+    <div class="container text-center">
+        <h3><span class="avatar"><i class="glyphicon glyphicon-home"></i></span> Sokoto State</h3>
+        <p>2019-06-11 - current</p>
+    </div>
+  </div>
+
+<div class="content_box">
+  <div class="party-groupings__title text-center">
+    <h3>Members</h3>
+  </div>
+  <div class="principal-people-accordion people-accordion ui-widget-content ui-accordion ui-widget ui-helper-reset">
+    
+      <ul class="contact-list">
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="sahabi-umaru">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/sahabi-umaru/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Sahabi Umaru">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/sahabi-umaru/">
+                  <h3 class="contact-list__item__name">Sahabi Umaru</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Binji</span>
+                  <a class="contact-list__item__area test-area" href="/place/binji/">Binji</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="magaji-abubakar">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/magaji-abubakar/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Magaji Abubakar">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/magaji-abubakar/">
+                  <h3 class="contact-list__item__name">Magaji Abubakar</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Bodinga North</span>
+                  <a class="contact-list__item__area test-area" href="/place/bodinga/">Bodinga</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="tukur-bala">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/tukur-bala/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Tukur Bala">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/tukur-bala/">
+                  <h3 class="contact-list__item__name">Tukur Bala</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Bodinga South</span>
+                  <a class="contact-list__item__area test-area" href="/place/bodinga/">Bodinga</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="aminu-magaji">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/aminu-magaji/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Aminu Magaji">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/aminu-magaji/">
+                  <h3 class="contact-list__item__name">Aminu Magaji</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Dange Shuni</span>
+                  <a class="contact-list__item__area test-area" href="/place/dange-shuni/">Dange-Shuni</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="kabiru-dauda">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/kabiru-dauda/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Kabiru Dauda">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/kabiru-dauda/">
+                  <h3 class="contact-list__item__name">Kabiru Dauda</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Gada East</span>
+                  <a class="contact-list__item__area test-area" href="/place/gada/">Gada</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="abubakar-altine-kyadawa">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/abubakar-altine-kyadawa/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Abubakar Altine Kyadawa">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/abubakar-altine-kyadawa/">
+                  <h3 class="contact-list__item__name">Abubakar Kyadawa</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Gada West</span>
+                  <a class="contact-list__item__area test-area" href="/place/gada/">Gada</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="faruku-amadu">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/faruku-amadu/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Faruku Amadu">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/faruku-amadu/">
+                  <h3 class="contact-list__item__name">Faruku Amadu</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Goronyo</span>
+                  <a class="contact-list__item__area test-area" href="/place/goronyo/">Goronyo</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="balle-faruk-mustapha">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/balle-faruk-mustapha/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Balle Faruk Mustapha">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/balle-faruk-mustapha/">
+                  <h3 class="contact-list__item__name">Balle Mustapha</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Gudu</span>
+                  <a class="contact-list__item__area test-area" href="/place/gudu/">Gudu</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="muhammad-bello-idris">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/muhammad-bello-idris/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Muhammad Bello Idris">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/muhammad-bello-idris/">
+                  <h3 class="contact-list__item__name">Muhammad Idris</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Gwadabawa North</span>
+                  <a class="contact-list__item__area test-area" href="/place/gwadabawa/">Gwadabawa</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="abdullahi-garba">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/abdullahi-garba/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Abdullahi Garba">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/abdullahi-garba/">
+                  <h3 class="contact-list__item__name">Abdullahi Garba</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Gwadabawa South</span>
+                  <a class="contact-list__item__area test-area" href="/place/gwadabawa/">Gwadabawa</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="bello-isah-ambarura">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/bello-isah-ambarura/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Bello Isah Ambarura">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/bello-isah-ambarura/">
+                  <h3 class="contact-list__item__name">Bello Ambarura</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Illela</span>
+                  <a class="contact-list__item__area test-area" href="/place/illela/">Illela</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="modachi-habibu-halilu">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/modachi-habibu-halilu/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Modachi Habibu Halilu">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/modachi-habibu-halilu/">
+                  <h3 class="contact-list__item__name">Modachi Halilu</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Isa</span>
+                  <a class="contact-list__item__area test-area" href="/place/isa/">Isa</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="abdullahi-mahmud">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/abdullahi-mahmud/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Abdullahi Mahmud">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/abdullahi-mahmud/">
+                  <h3 class="contact-list__item__name">Abdullahi Mahmud</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Kware</span>
+                  <a class="contact-list__item__area test-area" href="/place/kware/">Kware</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="isa-harisu-kebbe">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/isa-harisu-kebbe/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Isa Harisu Kebbe">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/isa-harisu-kebbe/">
+                  <h3 class="contact-list__item__name">Isa Kebbe</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Kebbe</span>
+                  <a class="contact-list__item__area test-area" href="/place/kebbe/">Kebbe</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="abdullahi-alhaji-zakari">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/abdullahi-alhaji-zakari/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Abdullahi Alhaji Zakari">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/abdullahi-alhaji-zakari/">
+                  <h3 class="contact-list__item__name">Abdullahi Zakari</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Rabah</span>
+                  <a class="contact-list__item__area test-area" href="/place/rabah/">Rabah</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="almustapha-aminu">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/almustapha-aminu/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Almustapha Aminu">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/almustapha-aminu/">
+                  <h3 class="contact-list__item__name">Almustapha Aminu</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Sabon Birni North</span>
+                  <a class="contact-list__item__area test-area" href="/place/sabon-birni/">Sabon Birni</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="saidu-n-ibrahim">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/saidu-n-ibrahim/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Saidu N. Ibrahim">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/saidu-n-ibrahim/">
+                  <h3 class="contact-list__item__name">Saidu Ibrahim</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Sabon Birni South</span>
+                  <a class="contact-list__item__area test-area" href="/place/sabon-birni/">Sabon Birni</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="alhaji-maidawa">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/alhaji-maidawa/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Alhaji Maidawa">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/alhaji-maidawa/">
+                  <h3 class="contact-list__item__name">Alhaji Maidawa</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Shagari</span>
+                  <a class="contact-list__item__area test-area" href="/place/shagari/">Shagari</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="gande-atiku-liman">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/gande-atiku-liman/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Gande Atiku Liman">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/gande-atiku-liman/">
+                  <h3 class="contact-list__item__name">Gande Liman</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Silame</span>
+                  <a class="contact-list__item__area test-area" href="/place/silame/">Silame</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="haliru-buhari">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/haliru-buhari/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Haliru Buhari">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/haliru-buhari/">
+                  <h3 class="contact-list__item__name">Haliru Buhari</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Sokoto North I</span>
+                  <a class="contact-list__item__area test-area" href="/place/sokoto-north/">Sokoto North</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="sarki-ibrahim-arzika">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/sarki-ibrahim-arzika/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Sarki Ibrahim Arzika">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/sarki-ibrahim-arzika/">
+                  <h3 class="contact-list__item__name">Sarki Arzika</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Sokoto North Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/sokoto-north/">Sokoto North</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="mustapha-abdullhi">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/mustapha-abdullhi/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Mustapha Abdullhi">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/mustapha-abdullhi/">
+                  <h3 class="contact-list__item__name">Mustapha Abdullhi</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Sokoto South I</span>
+                  <a class="contact-list__item__area test-area" href="/place/sokoto-south/">Sokoto South</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="mohammed-malami-ahmed">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/mohammed-malami-ahmed/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Mohammed Malami Ahmed">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/mohammed-malami-ahmed/">
+                  <h3 class="contact-list__item__name">Mohammed Ahmed</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Sokoto South Ii</span>
+                  <a class="contact-list__item__area test-area" href="/place/sokoto-south/">Sokoto South</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="romo-sule-hantsi">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/romo-sule-hantsi/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Romo Sule Hantsi">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/romo-sule-hantsi/">
+                  <h3 class="contact-list__item__name">Romo Hantsi</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Tambuwal West</span>
+                  <a class="contact-list__item__area test-area" href="/place/tambawal/">Tambawal</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="sanyina-mode-ladan">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/sanyina-mode-ladan/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Sanyina Mode Ladan">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/sanyina-mode-ladan/">
+                  <h3 class="contact-list__item__name">Sanyina Ladan</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Tambuwal East</span>
+                  <a class="contact-list__item__area test-area" href="/place/tambawal/">Tambawal</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="miko-musa">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/miko-musa/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Miko Musa">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/miko-musa/">
+                  <h3 class="contact-list__item__name">Miko Musa</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Tangaza</span>
+                  <a class="contact-list__item__area test-area" href="/place/tangaza/">Tangaza</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="randa-abdullahi-muhammad">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/randa-abdullahi-muhammad/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Randa Abdullahi Muhammad">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/randa-abdullahi-muhammad/">
+                  <h3 class="contact-list__item__name">Randa Muhammad</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Tureta</span>
+                  <a class="contact-list__item__area test-area" href="/place/tureta/">Tureta</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="murtala-bello-maigona">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/murtala-bello-maigona/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Murtala Bello Maigona">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/murtala-bello-maigona/">
+                  <h3 class="contact-list__item__name">Murtala Maigona</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Wamakko</span>
+                  <a class="contact-list__item__area test-area" href="/place/wamakko/">Wamakko</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="mohammed-aminu-achida">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/mohammed-aminu-achida/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Mohammed Aminu Achida">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/mohammed-aminu-achida/">
+                  <h3 class="contact-list__item__name">Mohammed Achida</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Wurno</span>
+                  <a class="contact-list__item__area test-area" href="/place/wurno/">Wurno</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="shehu-yabo-abubakar">
+      <div class="contact-list__item contact-list__item--people">
+          <div class="media">
+            <div class="media-left">
+              <a href="/person/shehu-yabo-abubakar/">
+                
+                  <img class="contact-list__item__photo" src="/images/person-250x250.png" srcset="/images/person-250x250.png" alt="Shehu Yabo Abubakar">
+                
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="/person/shehu-yabo-abubakar/">
+                  <h3 class="contact-list__item__name">Shehu Abubakar</h3>
+              </a>
+              <p>
+                
+                  <span class="test-constituency">Yabo</span>
+                  <a class="contact-list__item__area test-area" href="/place/yabo/">Yabo</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+    </li>
+  
+</ul> 
+    
+  </div>
+</div>
+          </div>
+        </div>
+
+      
+
+    </div>
+
+    <div class="site-footer">
+  <div class="container">
+    <div class="site-footer__primary">
+      <h3>Shine Your Eye</h3>
+      <p>Shine your Eye is an initiative of <a href="https://eie.ng" target="_blank" title="EiE Nigeria">Enough is Enough Nigeria (EiENigeria)</a>  with support from <a href="https://www.placng.org/" target="_blank" title="PLAC NG">Policy and Legal Advocacy Center</a>. <a href="/info/about">Read more.</a></p>
+      <ul class="list-inline">
+        <li><a href="mailto:syeinfo@eienigeria.org">syeinfo@eienigeria.org</a></li>
+        <li><a href="https://twitter.com/NGShineYourEye">@NGShineYourEye</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__secondary">
+      <ul class="list-inline">
+        <li><a class="btn btn-primary" href="/search/">Find your Representative</a></li>
+        <li><a class="btn btn-default" href="/blog/">Latest News</a></li>
+        <li><a class="btn btn-default" href="/info/democracy-resources">Democractic Resources</a></li>
+        <li><a class="btn btn-default" href="/info/elections">Elections</a></li>
+        <li><a class="btn btn-default" href="/events/">Events</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/javascripts/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+<script src="/javascripts/multipurpose-search.js"></script>
+<script>
+  (function() {
+    var cx = '009849292720701569670:dnm2ccnvkai';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+  </body>
+</html>
